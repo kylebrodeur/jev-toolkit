@@ -1,0 +1,42 @@
+{
+  "name": "jev-toolkit",
+  "version": "0.2.0",
+  "description": "Confidence gating and 1Password key wiring for TypeSafe Jev. Thin by design -- the SDK owns everything else.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    "./gating": "./gating.js",
+    "./key": "./key.js"
+  },
+  "files": [
+    "gating.js",
+    "key.js",
+    "templates/",
+    "skills/"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint:self": "oxlint",
+    "hooks:install": "husky"
+  },
+  "peerDependencies": {
+    "@typesafe-ai/sdk": ">=0.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@typesafe-ai/sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "1.80.0",
+    "@typesafe-ai/sdk": "0.7.0",
+    "husky": "^9.1.7",
+    "oxlint": "1.80.0",
+    "vitest": "^5.0.1"
+  },
+  "packageManager": "pnpm@12.15.0"
+}
