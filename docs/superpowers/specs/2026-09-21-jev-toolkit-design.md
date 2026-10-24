@@ -41,7 +41,7 @@ The docs are explicit about this; rounding it to pick a bucket discards the
 information worth gating on. Noted in the skill and README rather than encoded,
 because the right handling is application-specific.
 
-**`key.js`.** The SDK reads the environment; Kyle's keys live in 1Password.
+**`key.js`.** The SDK reads the environment; the keys live in 1Password.
 `loadKey` fills the variable from an `op://` reference. An existing environment
 value always wins, so CI injects a secret and 1Password is never consulted. The
 key is never logged, written or placed in an error message, and the op CLI's

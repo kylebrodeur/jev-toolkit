@@ -32,7 +32,7 @@ missing.
    cached metadata below a declared peer range without any warning.
    For Python, `uv add typesafe-sdk` (0.7.1 on PyPI, verified) -- never bare pip.
 2. **Wire the key.** Call `loadKey({ ref })` once at process start, before any
-   client is constructed. Kyle's reference is verified as
+   client is constructed. The reference is verified as
    `op://Personal/Typesafe AI Key/credential`. An `op://` path cannot contain
    parentheses. On macOS, export `OP_BIOMETRIC_UNLOCK_ENABLED=true` so `op read`
    unlocks without an interactive session -- without it the CLI blocks for a
