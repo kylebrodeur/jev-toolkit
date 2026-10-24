@@ -1,0 +1,44 @@
+# jev-toolkit
+
+Confidence gating and 1Password key resolution for TypeSafe Jev, shipped as a
+private, sponsor-gated git dependency: `gating.js` (certainty, verdict,
+partition, actionable), `key.js` (loadKey, loadEnv), the smoke and env
+templates, the `jev` wiring skill, and the vendored anti-slop Oxlint plugin.
+
+## Docs
+
+- [README.md](README.md): what the repo is, the install surface, and the first
+  command to run.
+- [docs/quickstart.md](docs/quickstart.md): the numbered path from nothing to a
+  gated, key-resolved, smoke-passed setup.
+- [docs/how-to.md](docs/how-to.md): day-to-day tasks: routing a fan-out,
+  tuning thresholds, keeping thresholds stable across model versions.
+- [docs/RUNBOOK.md](docs/RUNBOOK.md): the full command surface, every error
+  string and its fix, recovery procedures, and the release procedure.
+- [examples/jev-gating.md](examples/jev-gating/jev-gating.md): install the
+  toolkit and route a fan-out answer set, with captured output.
+- [CONTRIBUTING.md](CONTRIBUTING.md): setup, verification commands, and how to
+  open a change.
+- [SECURITY.md](SECURITY.md): how to report a vulnerability.
+- [AGENTS.md](AGENTS.md): the repo's rules for an agent working in it.
+- [skills/jev/SKILL.md](skills/jev/SKILL.md): the wiring skill; the
+  advisor-triage guidance is beside it (`advisor-triage.md`).
+- [CHANGELOG.md](CHANGELOG.md): what each tag changed.
+- [docs/superpowers/specs/2026-09-21-jev-toolkit-design.md](docs/superpowers/specs/2026-09-21-jev-toolkit-design.md):
+  the design decision record: what the SDK already owns and why the surface
+  stays thin.
+
+## Family
+
+Part of the AI ECP family: independent, single-purpose repos. The family
+catalog, docs standard, and verification harness live in the private
+`ai-ecp-system` repo, which is not public. This repo is the one OPTIONAL and
+gated member: it ships with the paid Operator Kit, unlocked by purchase or by
+tier, and its install surface is a private git dependency pinned by tag.
+
+## Status
+
+Private and sponsor-gated; no npm publish, no public release surfaces, no
+free install. The v0.1.4 tag is healthy as a private git dependency;
+version-sync to the next release is pending (a release task, not a repo
+hygiene task). Checked 2026-10-22.

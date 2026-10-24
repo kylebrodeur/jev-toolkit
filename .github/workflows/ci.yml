@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests (vitest, the runner package.json declares)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          # The version is NOT pinned here. The pin is in
+          # package.json's "packageManager", and it is the family
+          # standard: pnpm@12.15.0. A workflow that pins a version
+          # too, and a different one, fails the job with "Multiple
+          # versions of pnpm specified" before a single test runs.
+          # The packageManager pin is the one that matters, and it is
+          # what corepack reads.
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test
+
+      # The anti-slop Oxlint rules at error, with the recorded no-runtime-typeof
+      # overrides. Warnings do not fail the job (oxlint exits 0), which is the
+      # state observed locally: find the command in package.json (lint:self).
+      - name: Lint
+        run: pnpm lint:self
