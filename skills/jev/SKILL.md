@@ -9,8 +9,7 @@ This skill covers **wiring only**. The globally installed `typesafe-ai` skill
 owns question design, the three primitives, confidence theory and doc
 navigation -- read it for anything about what to ask. Do not restate it here.
 
-Library: `~/workspace/__Tools/jev-toolkit`, consumed as a public git
-dependency.
+Library: the `jev-toolkit` package, consumed as a public git dependency.
 
 ## What the SDK already does
 

@@ -117,7 +117,9 @@ to npm; this is a public repo.
 2. Run the health pass: `pnpm test`, `pnpm lint:self`, the pre-commit path
    (`pnpm hooks:install` once, then a commit exercises the hook), and the
    family harness:
-   `cd ~/workspace/ai-ecp-system && uv run python tools/verify-system.py --repo jev-toolkit`.
+   `python3 tools/verify-system.py --repo jev-toolkit`, run from the
+   private family system repo against this checkout. The harness is
+   maintainer-only; the commands above are the ones CI runs.
    Require every `jev-toolkit:` line to read PASS.
 3. Bump `package.json` `version` to the tag, no leading `v`, and commit with
    the lockfile if dependencies changed.

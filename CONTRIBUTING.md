@@ -47,13 +47,18 @@ recognize; the override keeps the findings visible instead of silent.
 The pre-commit hook runs `pnpm test`; install it with `pnpm hooks:install`
 and confirm a commit exercises it.
 
-Then run the family harness from the system repo:
+Then run the family harness. It lives in the PRIVATE family system
+repo, so a public contributor does not have it; a maintainer runs it
+against this checkout:
 
 ```bash
-cd ~/workspace/ai-ecp-system && uv run python tools/verify-system.py --repo jev-toolkit
+# In the private family system repo, against this checkout:
+python3 tools/verify-system.py --repo jev-toolkit
 ```
 
-Expected: every `jev-toolkit:` line reads PASS, exit 0.
+Expected: every `jev-toolkit:` line reads PASS, exit 0. The commands
+above are the ones a public contributor runs, and they are the ones CI
+runs; the family harness checks the doc gates and is maintainer-only.
 
 ## Open a change
 
