@@ -18,7 +18,14 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 12.5.1
+          # The version is NOT pinned here. The pin is in
+          # package.json's "packageManager", and it is the family
+          # standard: pnpm@12.15.0. A workflow that pins a version
+          # too, and a different one, fails the job with "Multiple
+          # versions of pnpm specified" before a single test runs.
+          # The packageManager pin is the one that matters, and it is
+          # what corepack reads.
+          run_install: false
 
       - uses: actions/setup-node@v4
         with:
