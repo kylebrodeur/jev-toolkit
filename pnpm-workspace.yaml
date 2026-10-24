@@ -1,0 +1,7 @@
+# Allows @typesafe-ai/sdk 0.7.0 (image()/box()/withAssets, for Jev 1.14) to
+# install under this machine's minimum-release-age supply-chain policy while the
+# release is still brand new. pnpm manages this list; the entry is safe to drop
+# once 0.7.0 has aged past the policy threshold. Dev-only: not in package.json
+# "files", so consumers of the git dependency never receive it.
+minimumReleaseAgeExclude:
+  - '@typesafe-ai/sdk@0.7.0'
